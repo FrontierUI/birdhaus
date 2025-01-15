@@ -158,7 +158,7 @@
 
             <div class="flexy flex-col relative w-full">
               <div class="flexy relative top-28 lg:top-16">
-                <div class="max-w-md lg:max-w-lg h-full p-3">
+                <div class="max-w-md lg:max-w-lg h-full p-3 spar">
                   <img
                     src="assets/images/birdha.png"
                     class="img-fluid"
@@ -199,6 +199,25 @@
     <script src="assets/js/jquery-3.7.1.js"></script>
     <script src="assets/js/slick.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/js/tilt.jquery.js"></script>
+
+    <script>
+      (function ($) {
+        'use strict';
+
+        $('.spar').tilt({
+          width: '100',
+          maxTilt: 45,
+          perspective: 1400,
+          easing: 'cubic-bezier(.03,.98,.52,.99)',
+          speed: 1200,
+          glare: true,
+          maxGlare: 0,
+          scale: 1.02,
+        });
+      })(jQuery);
+    </script>
 
     <script src="assets/js/main.js"></script>
   </body>
