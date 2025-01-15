@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap');
+
+body {
+  font-family: 'Host Grotesk', serif;
+  font-weight: 400;
+  width: 100%;
+  color: #000000;
+  overflow-x: hidden;
+}
+
+.flexy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnPadd {
+  padding: 0.5rem 1.5rem;
+}
+
+.aboutUs {
+  position: relative;
+  z-index: 2;
+}
+
+.aboutUs::before {
+  position: absolute;
+  content: '';
+  height: 85vh;
+  width: 100%;
+  z-index: -1;
+  background-image: url('/assets/images/aboutPat.svg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.services {
+  position: relative;
+  z-index: 2;
+}
+
+.services::before {
+  position: absolute;
+  content: '';
+  height: 85vh;
+  width: 100%;
+  z-index: -1;
+  background-image: url('/assets/images/aboutPat.svg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.serviceThumbnail:hover .servicesThumbhover {
+  opacity: 1;
+}
+
+.servicesThumbhover {
+  opacity: 0;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  inset-inline-start: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: 75%;
+  overflow: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.7s cubic-bezier(0.23, 1, 0.32, 1),
+    -webkit-transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+  margin: -3rem 54%;
+  /* margin: -200px 0 0 -150px; */
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@media (max-width: 575px) {
+  .btnPadd {
+    padding: 0.5rem 1rem;
+  }
+
+  .aboutUs::before {
+    height: 100vh;
+  }
+  .services::before {
+    height: 85vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  .padRightLeft3 {
+    padding-right: 3rem !important;
+    padding-left: 3rem !important;
+  }
+}
