@@ -43,7 +43,7 @@ body {
 .services::before {
   position: absolute;
   content: '';
-  height: 85vh;
+  height: 89vh;
   width: 100%;
   z-index: -1;
   background-image: url('/assets/images/aboutPat.svg');
@@ -52,7 +52,24 @@ body {
   background-repeat: no-repeat;
 }
 
-.serviceThumbnail:hover .servicesThumbhover {
+.servicesFrame {
+  position: relative;
+  z-index: 2;
+}
+
+.servicesFrame::before {
+  position: absolute;
+  content: '';
+  height: 89vh;
+  width: 100%;
+  z-index: -1;
+  background-image: url('/assets/images/servicesFram.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* .serviceThumbnail:hover .servicesThumbhover {
   opacity: 1;
 }
 
@@ -71,11 +88,10 @@ body {
   transition: opacity 0.3s, transform 0.7s cubic-bezier(0.23, 1, 0.32, 1),
     -webkit-transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
   margin: -3rem 54%;
-  /* margin: -200px 0 0 -150px; */
   overflow: hidden;
   pointer-events: none;
   z-index: 1;
-}
+} */
 
 @media (max-width: 575px) {
   .btnPadd {
