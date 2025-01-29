@@ -35,6 +35,21 @@ body {
   background-repeat: no-repeat;
 }
 
+.contactImg {
+  position: relative;
+}
+.contactImg::before {
+  position: absolute;
+  content: '';
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  background-image: url('/assets/images/contactIm.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .services {
   position: relative;
   z-index: 2;
