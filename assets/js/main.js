@@ -79,6 +79,51 @@ $('.bhBlogs').slick({
   ],
 });
 
+$('.brandsLogoMarquee').slick({
+  autoplay: true,
+  arrows: false,
+  autoplaySpeed: 0,
+  speed: 8000,
+  swipe: false,
+  slidesToShow: 4,
+  cssEase: 'linear',
+  pauseOnFocus: false,
+  pauseOnHover: false,
+  ltr: true,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: { slidesToShow: 3, slidesToScroll: 1, infinite: true },
+    },
+    {
+      breakpoint: 640,
+      settings: { slidesToShow: 2, slidesToScroll: 1, infinite: true },
+    },
+    {
+      breakpoint: 575,
+      settings: { slidesToShow: 2, slidesToScroll: 1, infinite: true },
+    },
+  ],
+});
+
+$('.servicesSlider').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  dots: false,
+  arrows: false,
+  infinite: true,
+  autoplay: true,
+  autoplaySpeed: 1000,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: { slidesToShow: 3, slidesToScroll: 1, infinite: true },
+    },
+    { breakpoint: 640, settings: { slidesToShow: 2, slidesToScroll: 1 } },
+    { breakpoint: 575, settings: { slidesToShow: 1, slidesToScroll: 1 } },
+  ],
+});
+
 //
 
 // let device_width = window.innerWidth;
