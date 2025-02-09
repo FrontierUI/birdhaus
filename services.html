@@ -21,13 +21,56 @@
     <link href="assets/css/globals.css" rel="stylesheet" />
 
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 100;
+        top: 13%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: #000;
+        background-color: rgba(0, 0, 0, 0.7);
+      }
+
+      .modal-content {
+        display: flex;
+        flex-direction: column;
+        padding: 2px;
+        border-radius: 5px;
+        margin: auto auto;
+        width: 94%;
+      }
+
+      @media screen and (min-width: 1299px) {
+        .modal-content {
+          width: 70%;
+          height: 85%;
+        }
+      }
+
+      @media screen and (max-width: 1024px) {
+        .modal {
+          overflow-x: hidden;
+          overflow-y: auto;
+        }
+
+        .modal-content {
+          width: 80%;
+          height: 75%;
+        }
+      }
+    </style>
   </head>
 
   <body>
     <main
       class="wrappered position-relative max-w-full w-full h-full overflow-x-hidden"
     >
-      <section class="relative bg-black w-full h-screen">
+      <section class="relative bg-black w-full max-lg:h-full lg:h-screen">
         <header
           class="flex shadow-md py-3 px-4 lg:!px-12 bg-white min-h-[70px] tracking-wide relative z-50 border-b border-gray-400"
         >
@@ -137,9 +180,15 @@
           </div>
         </header>
 
-        <div class="servicesFrame">
+        <div class="servicesFrame w-full">
           <div class="container relative z-[5] w-full h-full">
-            <div class="row flexy w-full h-full relative px-3">
+            <div class="hidden lg:block w-12 absolute lg:right-16 lg:top-6">
+              <a href="javascript:void(0)">
+                <img src="assets/images/ig.png" class="img-fluid" alt="" />
+              </a>
+            </div>
+
+            <div class="row flexy flex-col w-full h-full relative px-3">
               <div class="relative flexy flex-col top-14 lg:w-2/3 text-center">
                 <div
                   class="flexy flex-col relative py-3 space-y-5 w-full lg:w-3/4 text-center"
@@ -163,1231 +212,1220 @@
             </div>
 
             <div
-              class="grid max-sm:grid-cols-3 grid-cols-7 relative pt-10 w-full items-center justify-center max-sm:space-y-5 space-x-5 h-full px-3 lg:!px-12"
+              class="relative inset-y-16 flex flex-col lg:flex-row items-center justify-center w-full h-full max-lg:gap-y-5 gap-x-5 px-3 lg:!px-12"
             >
-              <a
-                href="#service-7"
-                class="flexy transition-all transform hover:scale-105 duration-300 ease-in-out"
-              >
-                <img
-                  src="assets/images/authen.svg"
-                  class="img-fluid h-full w-full object-contain"
-                  alt=""
-                />
-              </a>
-              <a
-                href="#service-2"
-                class="flexy transition-all transform hover:scale-105 duration-300 ease-in-out"
-              >
-                <img
-                  src="assets/images/webDesign.svg"
-                  class="img-fluid h-full w-full object-contain"
-                  alt=""
-                />
-              </a>
-              <a
-                href="#service-6"
-                class="flexy transition-all transform hover:scale-105 duration-300 ease-in-out"
-              >
-                <img
-                  src="assets/images/manufacturing.svg"
-                  class="img-fluid h-full w-full object-contain"
-                  alt=""
-                />
-              </a>
+              <div class="flexy gap-x-5 max-lg:gap-y-5">
+                <div class="otherPages" data-modal="modalAuthen">
+                  <a class="flexy model-button cursor-pointer">
+                    <img
+                      src="assets/images/authen.svg"
+                      class="img-fluid h-full w-full object-contain xl:max-w-[110px] transition-all transform hover:scale-105 duration-300 ease-in-out"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div id="modalAuthen" class="modal">
+                  <div class="modal-content">
+                    <div
+                      class="flex flex-col lg:flex-row items-start lg:items-center justify-center lg:justify-between space-y-3 !p-4 !p-6 lg:gap-x-10 bg-white hover:!bg-black text-black hover:!text-white duration-300 border border-gray-700 hover:border-gray-200"
+                    >
+                      <div
+                        class="flex flex-col items-start !justify-center space-y-3 lg:w-1/3"
+                      >
+                        <h2 class="text-xl lg:text-2xl uppercase font-medium">
+                          Advertising Design
+                        </h2>
+                        <ul
+                          class="flex !list-none flex-col items-start space-y-1"
+                        >
+                          <li class="">
+                            <span class="text-md">Creative Campaigns</span>
+                          </li>
+                          <li class="">
+                            <span class="text-md">Print & Digital Ads</span>
+                          </li>
+                          <li class="">
+                            <span class="text-md">Brand Storytelling</span>
+                          </li>
+                        </ul>
+                        <a
+                          href="contact-us.html"
+                          class="rounded-full border-2 border-white max-sm:px-4 !py-2 lg:px-8 font-semibold uppercase bg-black hover:!bg-white hover:!text-black text-white transition-all transform ease-in-out duration-300 hover:scale-105"
+                          >Let's Create Together</a
+                        >
+                      </div>
+                      <hr
+                        class="absolute left-[33%] max-h-[160px] hidden lg:block bg-zinc-500 !h-full w-[1px]"
+                      />
+                      <div class="flex items-start justify-center lg:w-1/3">
+                        <h1 class="text-xl lg:text-4xl font-medium">
+                          Eye-catching ad designs that amplify your message and
+                          drive conversions.
+                        </h1>
+                      </div>
+                      <div class="flex items-start justify-center lg:w-1/3">
+                        <p class="text-md">
+                          Have a project in mind? Whether you’re looking to
+                          build a stunning website, design a user-friendly app,
+                          or elevate your digital marketing strategy, the
+                          BRIDHAUS team is ready to help. Let’s create something
+                          extraordinary together.
+                        </p>
+                      </div>
+                    </div>
 
-              <a
-                href="#service-1"
-                class="flexy transition-all transform hover:scale-105 duration-300 ease-in-out"
-              >
-                <img
-                  src="assets/images/graphicDesign.svg"
-                  class="img-fluid h-full w-full object-contain"
-                  alt=""
-                />
-              </a>
-              <a
-                href="#service-3"
-                class="flexy transition-all transform hover:scale-105 duration-300 ease-in-out"
-              >
-                <img
-                  src="assets/images/appDevelopment.svg"
-                  class="img-fluid h-full w-full object-contain"
-                  alt=""
-                />
-              </a>
-              <a
-                href="#service-5"
-                class="flexy transition-all transform hover:scale-105 duration-300 ease-in-out"
-              >
-                <img
-                  src="assets/images/seoDigitals.svg"
-                  class="img-fluid h-full w-full object-contain"
-                  alt=""
-                />
-              </a>
-              <a
-                href="#service-4"
-                class="flexy transition-all transform hover:scale-105 duration-300 ease-in-out"
-              >
-                <img
-                  src="assets/images/3dAnimation.svg"
-                  class="img-fluid h-full w-full object-contain"
-                  alt=""
-                />
-              </a>
+                    <div class="w-full py-4">
+                      <div class="servicesSlider">
+                        <div class="slicky mx-3">
+                          <div class="flexy w-full h-full relative">
+                            <img
+                              src="assets/images/birdhayspck.png"
+                              class="img-fluid h-full w-full object-contain bg-black/[0.25]"
+                              alt=""
+                            />
+                            <div
+                              class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
+                            >
+                              <img
+                                src="assets/images/rightUpArrow.svg"
+                                class="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div
+                              class="absolute bottom-3 left-3 w-4/5 text-gray-200"
+                            >
+                              <h2 class="text-xl lg:text-5xl font-semibold">
+                                Designs That Define Brands
+                              </h2>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="slicky mx-3">
+                          <div class="flexy w-full h-full relative">
+                            <img
+                              src="assets/images/mobils.png"
+                              class="img-fluid h-full w-full object-contain bg-black/[0.25]"
+                              alt=""
+                            />
+                            <div
+                              class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
+                            >
+                              <img
+                                src="assets/images/rightUpArrow.svg"
+                                class="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div
+                              class="absolute bottom-3 left-3 w-4/5 text-gray-200"
+                            >
+                              <h2 class="text-xl lg:text-5xl font-semibold">
+                                Designs That Define Brands
+                              </h2>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="slicky mx-3">
+                          <div class="flexy w-full h-full relative">
+                            <img
+                              src="assets/images/apparels.png"
+                              class="img-fluid h-full w-full object-contain bg-black/[0.25]"
+                              alt=""
+                            />
+                            <div
+                              class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
+                            >
+                              <img
+                                src="assets/images/rightUpArrow.svg"
+                                class="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div
+                              class="absolute bottom-3 left-3 w-4/5 text-gray-200"
+                            >
+                              <h2 class="text-xl lg:text-5xl font-semibold">
+                                Designs That Define Brands
+                              </h2>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="slicky mx-3">
+                          <div class="flexy w-full h-full relative">
+                            <img
+                              src="assets/images/define.png"
+                              class="img-fluid h-full w-full object-contain bg-black/[0.25]"
+                              alt=""
+                            />
+                            <div
+                              class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
+                            >
+                              <img
+                                src="assets/images/rightUpArrow.svg"
+                                class="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div
+                              class="absolute bottom-3 left-3 w-4/5 text-gray-200"
+                            >
+                              <h2 class="text-xl lg:text-5xl font-semibold">
+                                Designs That Define Brands
+                              </h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="otherPages" data-modal="modalWebDD">
+                  <a class="flexy model-button cursor-pointer">
+                    <img
+                      src="assets/images/webDesign.svg"
+                      class="img-fluid h-full w-full object-contain xl:max-w-[150px] transition-all transform hover:scale-105 duration-300 ease-in-out"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div id="modalWebDD" class="modal">
+                  <div class="modal-content">
+                    <div
+                      class="flex flex-col lg:flex-row items-start lg:items-center justify-center lg:justify-between space-y-3 !p-4 !p-6 lg:gap-x-10 bg-white hover:!bg-black text-black hover:!text-white duration-300 border border-gray-700 hover:border-gray-200"
+                    >
+                      <div
+                        class="flex flex-col items-start !justify-center space-y-3 lg:w-1/3"
+                      >
+                        <h2 class="text-xl lg:text-2xl uppercase font-medium">
+                          Website Design & Development
+                        </h2>
+                        <ul
+                          class="flex !list-none flex-col items-start space-y-1"
+                        >
+                          <li class="">
+                            <span class="text-md">Responsive Design</span>
+                          </li>
+                          <li class="">
+                            <span class="text-md">Custom Development</span>
+                          </li>
+                          <li class="">
+                            <span class="text-md">User-Centric Interfaces</span>
+                          </li>
+                        </ul>
+                        <a
+                          href="contact-us.html"
+                          class="rounded-full border-2 border-white max-sm:px-4 !py-2 lg:px-8 font-semibold uppercase bg-black hover:!bg-white hover:!text-black text-white transition-all transform ease-in-out duration-300 hover:scale-105"
+                          >Let's Create Together</a
+                        >
+                      </div>
+                      <hr
+                        class="absolute left-[33%] max-h-[160px] hidden lg:block bg-zinc-500 !h-full w-[1px]"
+                      />
+                      <div class="flex items-start justify-center lg:w-1/3">
+                        <h1 class="text-xl lg:text-4xl font-medium">
+                          Custom, responsive websites designed for performance,
+                          usability, and style.
+                        </h1>
+                      </div>
+                      <div class="flex items-start justify-center lg:w-1/3">
+                        <p class="text-md">
+                          Have a project in mind? Whether you’re looking to
+                          build a stunning website, design a user-friendly app,
+                          or elevate your digital marketing strategy, the
+                          BRIDHAUS team is ready to help. Let’s create something
+                          extraordinary together.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="w-full py-4">
+                      <div class="servicesSlider">
+                        <div class="slicky mx-3">
+                          <div class="flexy w-full h-full relative">
+                            <img
+                              src="assets/images/birdhayspck.png"
+                              class="img-fluid h-full w-full object-contain bg-black/[0.25]"
+                              alt=""
+                            />
+                            <div
+                              class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
+                            >
+                              <img
+                                src="assets/images/rightUpArrow.svg"
+                                class="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div
+                              class="absolute bottom-3 left-3 w-4/5 text-gray-200"
+                            >
+                              <h2 class="text-xl lg:text-5xl font-semibold">
+                                Designs That Define Brands
+                              </h2>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="slicky mx-3">
+                          <div class="flexy w-full h-full relative">
+                            <img
+                              src="assets/images/mobils.png"
+                              class="img-fluid h-full w-full object-contain bg-black/[0.25]"
+                              alt=""
+                            />
+                            <div
+                              class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
+                            >
+                              <img
+                                src="assets/images/rightUpArrow.svg"
+                                class="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div
+                              class="absolute bottom-3 left-3 w-4/5 text-gray-200"
+                            >
+                              <h2 class="text-xl lg:text-5xl font-semibold">
+                                Designs That Define Brands
+                              </h2>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="slicky mx-3">
+                          <div class="flexy w-full h-full relative">
+                            <img
+                              src="assets/images/apparels.png"
+                              class="img-fluid h-full w-full object-contain bg-black/[0.25]"
+                              alt=""
+                            />
+                            <div
+                              class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
+                            >
+                              <img
+                                src="assets/images/rightUpArrow.svg"
+                                class="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div
+                              class="absolute bottom-3 left-3 w-4/5 text-gray-200"
+                            >
+                              <h2 class="text-xl lg:text-5xl font-semibold">
+                                Designs That Define Brands
+                              </h2>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="slicky mx-3">
+                          <div class="flexy w-full h-full relative">
+                            <img
+                              src="assets/images/define.png"
+                              class="img-fluid h-full w-full object-contain bg-black/[0.25]"
+                              alt=""
+                            />
+                            <div
+                              class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
+                            >
+                              <img
+                                src="assets/images/rightUpArrow.svg"
+                                class="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div
+                              class="absolute bottom-3 left-3 w-4/5 text-gray-200"
+                            >
+                              <h2 class="text-xl lg:text-5xl font-semibold">
+                                Designs That Define Brands
+                              </h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="otherPages" data-modal="manufactured">
+                  <a class="flexy model-button cursor-pointer">
+                    <img
+                      src="assets/images/manufacturing.svg"
+                      class="img-fluid h-full w-full object-contain xl:max-w-[180px] transition-all transform hover:scale-105 duration-300 ease-in-out"
+                      alt=""
+                    />
+                  </a>
+                </div>
+
+                <div id="manufactured" class="modal">
+                  <div class="modal-content">
+                    <div
+                      class="flex flex-col lg:flex-row items-start lg:items-center justify-center lg:justify-between space-y-3 !p-4 !p-6 lg:gap-x-10 bg-white hover:!bg-black text-black hover:!text-white duration-300 border border-gray-700 hover:border-gray-200"
+                    >
+                      <div
+                        class="flex flex-col items-start !justify-center space-y-3 lg:w-1/3"
+                      >
+                        <h2 class="text-xl lg:text-2xl uppercase font-medium">
+                          Digital Marketing
+                        </h2>
+                        <ul
+                          class="flex !list-none flex-col items-start space-y-1"
+                        >
+                          <li class="">
+                            <span class="text-md">Social Media Campaigns</span>
+                          </li>
+                          <li class="">
+                            <span class="text-md">Email Marketing</span>
+                          </li>
+                          <li class="">
+                            <span class="text-md">Content Marketing</span>
+                          </li>
+                        </ul>
+                        <a
+                          href="contact-us.html"
+                          class="rounded-full border-2 border-white max-sm:px-4 !py-2 lg:px-8 font-semibold uppercase bg-black hover:!bg-white hover:!text-black text-white transition-all transform ease-in-out duration-300 hover:scale-105"
+                          >Let's Create Together</a
+                        >
+                      </div>
+                      <hr
+                        class="absolute left-[33%] max-h-[160px] hidden lg:block bg-zinc-500 !h-full w-[1px]"
+                      />
+                      <div class="flex items-start justify-center lg:w-1/3">
+                        <h1 class="text-xl lg:text-4xl font-medium">
+                          Data-driven campaigns designed to grow your audience.
+                        </h1>
+                      </div>
+                      <div class="flex items-start justify-center lg:w-1/3">
+                        <p class="text-md">
+                          Have a project in mind? Whether you’re looking to
+                          build a stunning website, design a user-friendly app,
+                          or elevate your digital marketing strategy, the
+                          BRIDHAUS team is ready to help. Let’s create something
+                          extraordinary together.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="w-full py-4">
+                      <div class="servicesSlider">
+                        <div class="slicky mx-3">
+                          <div class="flexy w-full h-full relative">
+                            <img
+                              src="assets/images/birdhayspck.png"
+                              class="img-fluid h-full w-full object-contain bg-black/[0.25]"
+                              alt=""
+                            />
+                            <div
+                              class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
+                            >
+                              <img
+                                src="assets/images/rightUpArrow.svg"
+                                class="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div
+                              class="absolute bottom-3 left-3 w-4/5 text-gray-200"
+                            >
+                              <h2 class="text-xl lg:text-5xl font-semibold">
+                                Designs That Define Brands
+                              </h2>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="slicky mx-3">
+                          <div class="flexy w-full h-full relative">
+                            <img
+                              src="assets/images/mobils.png"
+                              class="img-fluid h-full w-full object-contain bg-black/[0.25]"
+                              alt=""
+                            />
+                            <div
+                              class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
+                            >
+                              <img
+                                src="assets/images/rightUpArrow.svg"
+                                class="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div
+                              class="absolute bottom-3 left-3 w-4/5 text-gray-200"
+                            >
+                              <h2 class="text-xl lg:text-5xl font-semibold">
+                                Designs That Define Brands
+                              </h2>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="slicky mx-3">
+                          <div class="flexy w-full h-full relative">
+                            <img
+                              src="assets/images/apparels.png"
+                              class="img-fluid h-full w-full object-contain bg-black/[0.25]"
+                              alt=""
+                            />
+                            <div
+                              class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
+                            >
+                              <img
+                                src="assets/images/rightUpArrow.svg"
+                                class="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div
+                              class="absolute bottom-3 left-3 w-4/5 text-gray-200"
+                            >
+                              <h2 class="text-xl lg:text-5xl font-semibold">
+                                Designs That Define Brands
+                              </h2>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="slicky mx-3">
+                          <div class="flexy w-full h-full relative">
+                            <img
+                              src="assets/images/define.png"
+                              class="img-fluid h-full w-full object-contain bg-black/[0.25]"
+                              alt=""
+                            />
+                            <div
+                              class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
+                            >
+                              <img
+                                src="assets/images/rightUpArrow.svg"
+                                class="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div
+                              class="absolute bottom-3 left-3 w-4/5 text-gray-200"
+                            >
+                              <h2 class="text-xl lg:text-5xl font-semibold">
+                                Designs That Define Brands
+                              </h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flexy gap-x-5 max-lg:gap-y-5">
+                <div class="otherPages" data-modal="modalOne">
+                  <a class="flexy model-button cursor-pointer">
+                    <img
+                      src="assets/images/graphicDesign.svg"
+                      class="img-fluid h-full w-full object-contain xl:max-w-[250px] transition-all transform hover:scale-105 duration-300 ease-in-out"
+                      alt=""
+                    />
+                  </a>
+                </div>
+
+                <div id="modalOne" class="modal">
+                  <div class="modal-content">
+                    <div
+                      class="flex flex-col lg:flex-row items-start lg:items-center justify-center lg:justify-between space-y-3 !p-4 !p-6 lg:gap-x-10 bg-white hover:!bg-black text-black hover:!text-white duration-300 border border-gray-700 hover:border-gray-200"
+                    >
+                      <div
+                        class="flex flex-col items-start !justify-center space-y-3 lg:w-1/3"
+                      >
+                        <h2 class="text-xl lg:text-2xl uppercase font-medium">
+                          Graphic Design
+                        </h2>
+                        <ul
+                          class="flex !list-none flex-col items-start space-y-1"
+                        >
+                          <li class=""><span class="text-md">Logo</span></li>
+                          <li class="">
+                            <span class="text-md">Corporate Identity</span>
+                          </li>
+                          <li class="">
+                            <span class="text-md">Brand Guide</span>
+                          </li>
+                        </ul>
+                        <a
+                          href="contact-us.html"
+                          class="rounded-full border-2 border-white max-sm:px-4 !py-2 lg:px-8 font-semibold uppercase bg-black hover:!bg-white hover:!text-black text-white transition-all transform ease-in-out duration-300 hover:scale-105"
+                          >Let's Create Together</a
+                        >
+                      </div>
+
+                      <hr
+                        class="absolute left-[33%] max-h-[160px] hidden lg:block bg-zinc-500 !h-full w-[1px]"
+                      />
+                      <div class="flex items-start justify-center lg:w-1/3">
+                        <h1 class="text-xl lg:text-4xl font-medium lg:w-4/5">
+                          Transforming ideas into impactful visuals!
+                        </h1>
+                      </div>
+                      <div class="flex items-start justify-center lg:w-1/3">
+                        <p class="text-md">
+                          We specialize in creative graphic design that builds
+                          strong brands, communicates your message, and
+                          captivates your audience. From logos to marketing
+                          materials, we design to inspire and connect.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="w-full py-4">
+                      <div class="servicesSlider">
+                        <div class="slicky mx-3">
+                          <div class="flexy w-full h-full relative">
+                            <img
+                              src="assets/images/birdhayspck.png"
+                              class="img-fluid h-full w-full object-contain bg-black/[0.25]"
+                              alt=""
+                            />
+                            <div
+                              class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
+                            >
+                              <img
+                                src="assets/images/rightUpArrow.svg"
+                                class="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div
+                              class="absolute bottom-3 left-3 w-4/5 text-gray-200"
+                            >
+                              <h2 class="text-xl lg:text-5xl font-semibold">
+                                Designs That Define Brands
+                              </h2>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="slicky mx-3">
+                          <div class="flexy w-full h-full relative">
+                            <img
+                              src="assets/images/mobils.png"
+                              class="img-fluid h-full w-full object-contain bg-black/[0.25]"
+                              alt=""
+                            />
+                            <div
+                              class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
+                            >
+                              <img
+                                src="assets/images/rightUpArrow.svg"
+                                class="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div
+                              class="absolute bottom-3 left-3 w-4/5 text-gray-200"
+                            >
+                              <h2 class="text-xl lg:text-5xl font-semibold">
+                                Designs That Define Brands
+                              </h2>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="slicky mx-3">
+                          <div class="flexy w-full h-full relative">
+                            <img
+                              src="assets/images/apparels.png"
+                              class="img-fluid h-full w-full object-contain bg-black/[0.25]"
+                              alt=""
+                            />
+                            <div
+                              class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
+                            >
+                              <img
+                                src="assets/images/rightUpArrow.svg"
+                                class="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div
+                              class="absolute bottom-3 left-3 w-4/5 text-gray-200"
+                            >
+                              <h2 class="text-xl lg:text-5xl font-semibold">
+                                Designs That Define Brands
+                              </h2>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="slicky mx-3">
+                          <div class="flexy w-full h-full relative">
+                            <img
+                              src="assets/images/define.png"
+                              class="img-fluid h-full w-full object-contain bg-black/[0.25]"
+                              alt=""
+                            />
+                            <div
+                              class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
+                            >
+                              <img
+                                src="assets/images/rightUpArrow.svg"
+                                class="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div
+                              class="absolute bottom-3 left-3 w-4/5 text-gray-200"
+                            >
+                              <h2 class="text-xl lg:text-5xl font-semibold">
+                                Designs That Define Brands
+                              </h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flexy gap-x-5 max-lg:gap-y-5">
+                <div class="otherPages" data-modal="appDesign1">
+                  <a class="flexy model-button cursor-pointer">
+                    <img
+                      src="assets/images/appdes1.png"
+                      class="img-fluid h-full w-full object-contain xl:max-w-[180px] transition-all transform hover:scale-105 duration-300 ease-in-out"
+                      alt=""
+                    />
+                  </a>
+                </div>
+
+                <div id="appDesign1" class="modal">
+                  <div class="modal-content">
+                    <div
+                      class="flex flex-col lg:flex-row items-start lg:items-center justify-center lg:justify-between space-y-3 !p-4 !p-6 lg:gap-x-10 bg-white hover:!bg-black text-black hover:!text-white duration-300 border border-gray-700 hover:border-gray-200"
+                    >
+                      <div
+                        class="flex flex-col items-start !justify-center space-y-3 lg:w-1/3"
+                      >
+                        <h2 class="text-xl lg:text-2xl uppercase font-medium">
+                          App Design & Development
+                        </h2>
+                        <ul
+                          class="flex !list-none flex-col items-start space-y-1"
+                        >
+                          <li class="">
+                            <span class="text-md">Intuitive Interfaces</span>
+                          </li>
+                          <li class="">
+                            <span class="text-md">Intuitive Interfaces</span>
+                          </li>
+                          <li class="">
+                            <span class="text-md"
+                              >Cross-Platform Compatibility</span
+                            >
+                          </li>
+                        </ul>
+                        <a
+                          href="contact-us.html"
+                          class="rounded-full border-2 border-white max-sm:px-4 !py-2 lg:px-8 font-semibold uppercase bg-black hover:!bg-white hover:!text-black text-white transition-all transform ease-in-out duration-300 hover:scale-105"
+                          >Let's Create Together</a
+                        >
+                      </div>
+                      <hr
+                        class="absolute left-[33%] max-h-[160px] hidden lg:block bg-zinc-500 !h-full w-[1px]"
+                      />
+                      <div class="flex items-start justify-center lg:w-1/3">
+                        <h1 class="text-xl lg:text-4xl font-medium">
+                          User-friendly app interfaces that keep your audience
+                          engaged and coming back.
+                        </h1>
+                      </div>
+                      <div class="flex items-start justify-center lg:w-1/3">
+                        <p class="text-md">
+                          Have a project in mind? Whether you’re looking to
+                          build a stunning website, design a user-friendly app,
+                          or elevate your digital marketing strategy, the
+                          BRIDHAUS team is ready to help. Let’s create something
+                          extraordinary together.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="w-full py-4">
+                      <div class="servicesSlider">
+                        <div class="slicky mx-3">
+                          <div class="flexy w-full h-full relative">
+                            <img
+                              src="assets/images/birdhayspck.png"
+                              class="img-fluid h-full w-full object-contain bg-black/[0.25]"
+                              alt=""
+                            />
+                            <div
+                              class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
+                            >
+                              <img
+                                src="assets/images/rightUpArrow.svg"
+                                class="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div
+                              class="absolute bottom-3 left-3 w-4/5 text-gray-200"
+                            >
+                              <h2 class="text-xl lg:text-5xl font-semibold">
+                                Designs That Define Brands
+                              </h2>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="slicky mx-3">
+                          <div class="flexy w-full h-full relative">
+                            <img
+                              src="assets/images/mobils.png"
+                              class="img-fluid h-full w-full object-contain bg-black/[0.25]"
+                              alt=""
+                            />
+                            <div
+                              class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
+                            >
+                              <img
+                                src="assets/images/rightUpArrow.svg"
+                                class="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div
+                              class="absolute bottom-3 left-3 w-4/5 text-gray-200"
+                            >
+                              <h2 class="text-xl lg:text-5xl font-semibold">
+                                Designs That Define Brands
+                              </h2>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="slicky mx-3">
+                          <div class="flexy w-full h-full relative">
+                            <img
+                              src="assets/images/apparels.png"
+                              class="img-fluid h-full w-full object-contain bg-black/[0.25]"
+                              alt=""
+                            />
+                            <div
+                              class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
+                            >
+                              <img
+                                src="assets/images/rightUpArrow.svg"
+                                class="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div
+                              class="absolute bottom-3 left-3 w-4/5 text-gray-200"
+                            >
+                              <h2 class="text-xl lg:text-5xl font-semibold">
+                                Designs That Define Brands
+                              </h2>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="slicky mx-3">
+                          <div class="flexy w-full h-full relative">
+                            <img
+                              src="assets/images/define.png"
+                              class="img-fluid h-full w-full object-contain bg-black/[0.25]"
+                              alt=""
+                            />
+                            <div
+                              class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
+                            >
+                              <img
+                                src="assets/images/rightUpArrow.svg"
+                                class="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div
+                              class="absolute bottom-3 left-3 w-4/5 text-gray-200"
+                            >
+                              <h2 class="text-xl lg:text-5xl font-semibold">
+                                Designs That Define Brands
+                              </h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="otherPages" data-modal="seoDigi">
+                  <a class="flexy model-button cursor-pointer">
+                    <img
+                      src="assets/images/seoDigitals.svg"
+                      class="img-fluid h-full w-full object-contain xl:max-w-[150px] transition-all transform hover:scale-105 duration-300 ease-in-out"
+                      alt=""
+                    />
+                  </a>
+                </div>
+
+                <div id="seoDigi" class="modal">
+                  <div class="modal-content">
+                    <div
+                      class="flex flex-col lg:flex-row items-start lg:items-center justify-center lg:justify-between space-y-3 !p-4 !p-6 lg:gap-x-10 bg-white hover:!bg-black text-black hover:!text-white duration-300 border border-gray-700 hover:border-gray-200"
+                    >
+                      <div
+                        class="flex flex-col items-start !justify-center space-y-3 lg:w-1/3"
+                      >
+                        <h2 class="text-xl lg:text-2xl uppercase font-medium">
+                          SEO
+                        </h2>
+                        <ul
+                          class="flex !list-none flex-col items-start space-y-1"
+                        >
+                          <li class="">
+                            <span class="text-md">Keyword Optimization</span>
+                          </li>
+                          <li class="">
+                            <span class="text-md">On-Page SEO</span>
+                          </li>
+                          <li class="">
+                            <span class="text-md">Technical SEO</span>
+                          </li>
+                        </ul>
+                        <a
+                          href="contact-us.html"
+                          class="rounded-full border-2 border-white max-sm:px-4 !py-2 lg:px-8 font-semibold uppercase bg-black hover:!bg-white hover:!text-black text-white transition-all transform ease-in-out duration-300 hover:scale-105"
+                          >Let's Create Together</a
+                        >
+                      </div>
+                      <hr
+                        class="absolute left-[33%] max-h-[160px] hidden lg:block bg-zinc-500 !h-full w-[1px]"
+                      />
+                      <div class="flex items-start justify-center lg:w-1/3">
+                        <h1 class="text-xl lg:text-4xl font-medium">
+                          Boost your online visibility, strategies improve
+                          search rankings.
+                        </h1>
+                      </div>
+                      <div class="flex items-start justify-center lg:w-1/3">
+                        <p class="text-md">
+                          Have a project in mind? Whether you’re looking to
+                          build a stunning website, design a user-friendly app,
+                          or elevate your digital marketing strategy, the
+                          BRIDHAUS team is ready to help. Let’s create something
+                          extraordinary together.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="w-full py-4">
+                      <div class="servicesSlider">
+                        <div class="slicky mx-3">
+                          <div class="flexy w-full h-full relative">
+                            <img
+                              src="assets/images/birdhayspck.png"
+                              class="img-fluid h-full w-full object-contain bg-black/[0.25]"
+                              alt=""
+                            />
+                            <div
+                              class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
+                            >
+                              <img
+                                src="assets/images/rightUpArrow.svg"
+                                class="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div
+                              class="absolute bottom-3 left-3 w-4/5 text-gray-200"
+                            >
+                              <h2 class="text-xl lg:text-5xl font-semibold">
+                                Designs That Define Brands
+                              </h2>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="slicky mx-3">
+                          <div class="flexy w-full h-full relative">
+                            <img
+                              src="assets/images/mobils.png"
+                              class="img-fluid h-full w-full object-contain bg-black/[0.25]"
+                              alt=""
+                            />
+                            <div
+                              class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
+                            >
+                              <img
+                                src="assets/images/rightUpArrow.svg"
+                                class="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div
+                              class="absolute bottom-3 left-3 w-4/5 text-gray-200"
+                            >
+                              <h2 class="text-xl lg:text-5xl font-semibold">
+                                Designs That Define Brands
+                              </h2>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="slicky mx-3">
+                          <div class="flexy w-full h-full relative">
+                            <img
+                              src="assets/images/apparels.png"
+                              class="img-fluid h-full w-full object-contain bg-black/[0.25]"
+                              alt=""
+                            />
+                            <div
+                              class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
+                            >
+                              <img
+                                src="assets/images/rightUpArrow.svg"
+                                class="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div
+                              class="absolute bottom-3 left-3 w-4/5 text-gray-200"
+                            >
+                              <h2 class="text-xl lg:text-5xl font-semibold">
+                                Designs That Define Brands
+                              </h2>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="slicky mx-3">
+                          <div class="flexy w-full h-full relative">
+                            <img
+                              src="assets/images/define.png"
+                              class="img-fluid h-full w-full object-contain bg-black/[0.25]"
+                              alt=""
+                            />
+                            <div
+                              class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
+                            >
+                              <img
+                                src="assets/images/rightUpArrow.svg"
+                                class="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div
+                              class="absolute bottom-3 left-3 w-4/5 text-gray-200"
+                            >
+                              <h2 class="text-xl lg:text-5xl font-semibold">
+                                Designs That Define Brands
+                              </h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="otherPages" data-modal="animation3d">
+                  <a class="flexy model-button cursor-pointer">
+                    <img
+                      src="assets/images/3dAnimation.svg"
+                      class="img-fluid h-full w-full object-contain xl:max-w-[120px] transition-all transform hover:scale-105 duration-300 ease-in-out"
+                      alt=""
+                    />
+                  </a>
+                </div>
+
+                <div id="animation3d" class="modal">
+                  <div class="modal-content">
+                    <div
+                      class="flex flex-col lg:flex-row items-start lg:items-center justify-center lg:justify-between space-y-3 !p-4 !p-6 lg:gap-x-10 bg-white hover:!bg-black text-black hover:!text-white duration-300 border border-gray-700 hover:border-gray-200"
+                    >
+                      <div
+                        class="flex flex-col items-start !justify-center space-y-3 lg:w-1/3"
+                      >
+                        <h2 class="text-xl lg:text-2xl uppercase font-medium">
+                          UI/UX Design
+                        </h2>
+                        <ul
+                          class="flex !list-none flex-col items-start space-y-1"
+                        >
+                          <li class="">
+                            <span class="text-md"
+                              >Wireframing & Prototyping</span
+                            >
+                          </li>
+                          <li class="">
+                            <span class="text-md">Interactive Design</span>
+                          </li>
+                          <li class="">
+                            <span class="text-md">User-Centered Design</span>
+                          </li>
+                        </ul>
+                        <a
+                          href="contact-us.html"
+                          class="rounded-full border-2 border-white max-sm:px-4 !py-2 lg:px-8 font-semibold uppercase bg-black hover:!bg-white hover:!text-black text-white transition-all transform ease-in-out duration-300 hover:scale-105"
+                          >Let's Create Together</a
+                        >
+                      </div>
+                      <hr
+                        class="absolute left-[33%] max-h-[160px] hidden lg:block bg-zinc-500 !h-full w-[1px]"
+                      />
+                      <div class="flex items-start justify-center lg:w-1/3">
+                        <h1 class="text-xl lg:text-4xl font-medium">
+                          Seamless designs that prioritize user satisfaction and
+                          enhance digital experiences.
+                        </h1>
+                      </div>
+                      <div class="flex items-start justify-center lg:w-1/3">
+                        <p class="text-md">
+                          Have a project in mind? Whether you’re looking to
+                          build a stunning website, design a user-friendly app,
+                          or elevate your digital marketing strategy, the
+                          BRIDHAUS team is ready to help. Let’s create something
+                          extraordinary together.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="w-full py-4">
+                      <div class="servicesSlider">
+                        <div class="slicky mx-3">
+                          <div class="flexy w-full h-full relative">
+                            <img
+                              src="assets/images/birdhayspck.png"
+                              class="img-fluid h-full w-full object-contain bg-black/[0.25]"
+                              alt=""
+                            />
+                            <div
+                              class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
+                            >
+                              <img
+                                src="assets/images/rightUpArrow.svg"
+                                class="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div
+                              class="absolute bottom-3 left-3 w-4/5 text-gray-200"
+                            >
+                              <h2 class="text-xl lg:text-5xl font-semibold">
+                                Designs That Define Brands
+                              </h2>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="slicky mx-3">
+                          <div class="flexy w-full h-full relative">
+                            <img
+                              src="assets/images/mobils.png"
+                              class="img-fluid h-full w-full object-contain bg-black/[0.25]"
+                              alt=""
+                            />
+                            <div
+                              class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
+                            >
+                              <img
+                                src="assets/images/rightUpArrow.svg"
+                                class="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div
+                              class="absolute bottom-3 left-3 w-4/5 text-gray-200"
+                            >
+                              <h2 class="text-xl lg:text-5xl font-semibold">
+                                Designs That Define Brands
+                              </h2>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="slicky mx-3">
+                          <div class="flexy w-full h-full relative">
+                            <img
+                              src="assets/images/apparels.png"
+                              class="img-fluid h-full w-full object-contain bg-black/[0.25]"
+                              alt=""
+                            />
+                            <div
+                              class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
+                            >
+                              <img
+                                src="assets/images/rightUpArrow.svg"
+                                class="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div
+                              class="absolute bottom-3 left-3 w-4/5 text-gray-200"
+                            >
+                              <h2 class="text-xl lg:text-5xl font-semibold">
+                                Designs That Define Brands
+                              </h2>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="slicky mx-3">
+                          <div class="flexy w-full h-full relative">
+                            <img
+                              src="assets/images/define.png"
+                              class="img-fluid h-full w-full object-contain bg-black/[0.25]"
+                              alt=""
+                            />
+                            <div
+                              class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
+                            >
+                              <img
+                                src="assets/images/rightUpArrow.svg"
+                                class="img-fluid"
+                                alt=""
+                              />
+                            </div>
+                            <div
+                              class="absolute bottom-3 left-3 w-4/5 text-gray-200"
+                            >
+                              <h2 class="text-xl lg:text-5xl font-semibold">
+                                Designs That Define Brands
+                              </h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      <section id="services-section" class="relative w-full h-full">
-        <div class="container">
-          <div class="row flexy px-3 lg:!px-10">
-            <div class="grid grid-cols-1 w-full items-center justify-center">
-              <div
-                id="service-1"
-                class="relative flex flex-col space-y-5 items-start !justify-center w-full"
-              >
-                <div
-                  class="flex flex-col lg:flex-row items-start lg:items-center justify-center lg:justify-between space-y-3 !p-4 !p-6 lg:gap-x-10 bg-white hover:!bg-black text-black hover:!text-white duration-300 border border-gray-700 hover:border-gray-200"
-                >
-                  <div
-                    class="flex flex-col items-start !justify-center space-y-3 lg:w-1/3"
-                  >
-                    <h2 class="text-xl lg:text-2xl uppercase font-medium">
-                      Graphic Design
-                    </h2>
-                    <ul class="flex !list-none flex-col items-start space-y-1">
-                      <li class=""><span class="text-md">Logo</span></li>
-                      <li class="">
-                        <span class="text-md">Corporate Identity</span>
-                      </li>
-                      <li class="">
-                        <span class="text-md">Brand Guide</span>
-                      </li>
-                    </ul>
-                    <a
-                      href="contact-us.html"
-                      class="rounded-full border-2 border-white max-sm:px-4 !py-2 lg:px-8 font-semibold uppercase bg-black hover:!bg-white hover:!text-black text-white transition-all transform ease-in-out duration-300 hover:scale-105"
-                      >Let's Create Together</a
-                    >
-                  </div>
-
-                  <hr
-                    class="absolute left-[33%] max-h-[160px] hidden lg:block bg-zinc-500 !h-full w-[1px]"
-                  />
-                  <div class="flex items-start justify-center lg:w-1/3">
-                    <h1 class="text-xl lg:text-4xl font-medium lg:w-4/5">
-                      Transforming ideas into impactful visuals!
-                    </h1>
-                  </div>
-                  <div class="flex items-start justify-center lg:w-1/3">
-                    <p class="text-md">
-                      We specialize in creative graphic design that builds
-                      strong brands, communicates your message, and captivates
-                      your audience. From logos to marketing materials, we
-                      design to inspire and connect.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="w-full py-4">
-                  <div class="servicesSlider">
-                    <div class="slicky mx-3">
-                      <div class="flexy w-full h-full relative">
-                        <img
-                          src="assets/images/define.png"
-                          class="img-fluid h-full w-full object-contain bg-black/[0.25]"
-                          alt=""
-                        />
-                        <div
-                          class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
-                        >
-                          <img
-                            src="assets/images/rightUpArrow.svg"
-                            class="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="absolute bottom-3 left-3 w-4/5 text-gray-200"
-                        >
-                          <h2 class="text-xl lg:text-5xl font-semibold">
-                            Designs That Define Brands
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="slicky mx-3">
-                      <div class="flexy w-full h-full relative">
-                        <img
-                          src="assets/images/define.png"
-                          class="img-fluid h-full w-full object-contain bg-black/[0.25]"
-                          alt=""
-                        />
-                        <div
-                          class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
-                        >
-                          <img
-                            src="assets/images/rightUpArrow.svg"
-                            class="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="absolute bottom-3 left-3 w-4/5 text-gray-200"
-                        >
-                          <h2 class="text-xl lg:text-5xl font-semibold">
-                            Designs That Define Brands
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="slicky mx-3">
-                      <div class="flexy w-full h-full relative">
-                        <img
-                          src="assets/images/define.png"
-                          class="img-fluid h-full w-full object-contain bg-black/[0.25]"
-                          alt=""
-                        />
-                        <div
-                          class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
-                        >
-                          <img
-                            src="assets/images/rightUpArrow.svg"
-                            class="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="absolute bottom-3 left-3 w-4/5 text-gray-200"
-                        >
-                          <h2 class="text-xl lg:text-5xl font-semibold">
-                            Designs That Define Brands
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="slicky mx-3">
-                      <div class="flexy w-full h-full relative">
-                        <img
-                          src="assets/images/define.png"
-                          class="img-fluid h-full w-full object-contain bg-black/[0.25]"
-                          alt=""
-                        />
-                        <div
-                          class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
-                        >
-                          <img
-                            src="assets/images/rightUpArrow.svg"
-                            class="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="absolute bottom-3 left-3 w-4/5 text-gray-200"
-                        >
-                          <h2 class="text-xl lg:text-5xl font-semibold">
-                            Designs That Define Brands
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                id="service-2"
-                class="relative flex flex-col items-start !justify-center w-full"
-              >
-                <div
-                  class="flex flex-col lg:flex-row items-start lg:items-center justify-center lg:justify-between space-y-3 !p-4 !p-6 lg:gap-x-10 bg-white hover:!bg-black text-black hover:!text-white duration-300 border border-gray-700 hover:border-gray-200"
-                >
-                  <div
-                    class="flex flex-col items-start !justify-center space-y-3 lg:w-1/3"
-                  >
-                    <h2 class="text-xl lg:text-2xl uppercase font-medium">
-                      Website Design & Development
-                    </h2>
-                    <ul class="flex !list-none flex-col items-start space-y-1">
-                      <li class="">
-                        <span class="text-md">Responsive Design</span>
-                      </li>
-                      <li class="">
-                        <span class="text-md">Custom Development</span>
-                      </li>
-                      <li class="">
-                        <span class="text-md">User-Centric Interfaces</span>
-                      </li>
-                    </ul>
-                    <a
-                      href="contact-us.html"
-                      class="rounded-full border-2 border-white max-sm:px-4 !py-2 lg:px-8 font-semibold uppercase bg-black hover:!bg-white hover:!text-black text-white transition-all transform ease-in-out duration-300 hover:scale-105"
-                      >Let's Create Together</a
-                    >
-                  </div>
-                  <hr
-                    class="absolute left-[33%] max-h-[160px] hidden lg:block bg-zinc-500 !h-full w-[1px]"
-                  />
-                  <div class="flex items-start justify-center lg:w-1/3">
-                    <h1 class="text-xl lg:text-4xl font-medium">
-                      Custom, responsive websites designed for performance,
-                      usability, and style.
-                    </h1>
-                  </div>
-                  <div class="flex items-start justify-center lg:w-1/3">
-                    <p class="text-md">
-                      Have a project in mind? Whether you’re looking to build a
-                      stunning website, design a user-friendly app, or elevate
-                      your digital marketing strategy, the BRIDHAUS team is
-                      ready to help. Let’s create something extraordinary
-                      together.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="w-full py-4">
-                  <div class="servicesSlider">
-                    <div class="slicky mx-3">
-                      <div class="flexy w-full h-full relative">
-                        <img
-                          src="assets/images/define.png"
-                          class="img-fluid h-full w-full object-contain bg-black/[0.25]"
-                          alt=""
-                        />
-                        <div
-                          class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
-                        >
-                          <img
-                            src="assets/images/rightUpArrow.svg"
-                            class="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="absolute bottom-3 left-3 w-4/5 text-gray-200"
-                        >
-                          <h2 class="text-xl lg:text-5xl font-semibold">
-                            Designs That Define Brands
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="slicky mx-3">
-                      <div class="flexy w-full h-full relative">
-                        <img
-                          src="assets/images/define.png"
-                          class="img-fluid h-full w-full object-contain bg-black/[0.25]"
-                          alt=""
-                        />
-                        <div
-                          class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
-                        >
-                          <img
-                            src="assets/images/rightUpArrow.svg"
-                            class="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="absolute bottom-3 left-3 w-4/5 text-gray-200"
-                        >
-                          <h2 class="text-xl lg:text-5xl font-semibold">
-                            Designs That Define Brands
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="slicky mx-3">
-                      <div class="flexy w-full h-full relative">
-                        <img
-                          src="assets/images/define.png"
-                          class="img-fluid h-full w-full object-contain bg-black/[0.25]"
-                          alt=""
-                        />
-                        <div
-                          class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
-                        >
-                          <img
-                            src="assets/images/rightUpArrow.svg"
-                            class="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="absolute bottom-3 left-3 w-4/5 text-gray-200"
-                        >
-                          <h2 class="text-xl lg:text-5xl font-semibold">
-                            Designs That Define Brands
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="slicky mx-3">
-                      <div class="flexy w-full h-full relative">
-                        <img
-                          src="assets/images/define.png"
-                          class="img-fluid h-full w-full object-contain bg-black/[0.25]"
-                          alt=""
-                        />
-                        <div
-                          class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
-                        >
-                          <img
-                            src="assets/images/rightUpArrow.svg"
-                            class="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="absolute bottom-3 left-3 w-4/5 text-gray-200"
-                        >
-                          <h2 class="text-xl lg:text-5xl font-semibold">
-                            Designs That Define Brands
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                id="service-3"
-                class="relative flex flex-col items-start !justify-center w-full"
-              >
-                <div
-                  class="flex flex-col lg:flex-row items-start lg:items-center justify-center lg:justify-between space-y-3 !p-4 !p-6 lg:gap-x-10 bg-white hover:!bg-black text-black hover:!text-white duration-300 border border-gray-700 hover:border-gray-200"
-                >
-                  <div
-                    class="flex flex-col items-start !justify-center space-y-3 lg:w-1/3"
-                  >
-                    <h2 class="text-xl lg:text-2xl uppercase font-medium">
-                      App Design & Development
-                    </h2>
-                    <ul class="flex !list-none flex-col items-start space-y-1">
-                      <li class="">
-                        <span class="text-md">Intuitive Interfaces</span>
-                      </li>
-                      <li class="">
-                        <span class="text-md">Intuitive Interfaces</span>
-                      </li>
-                      <li class="">
-                        <span class="text-md"
-                          >Cross-Platform Compatibility</span
-                        >
-                      </li>
-                    </ul>
-                    <a
-                      href="contact-us.html"
-                      class="rounded-full border-2 border-white max-sm:px-4 !py-2 lg:px-8 font-semibold uppercase bg-black hover:!bg-white hover:!text-black text-white transition-all transform ease-in-out duration-300 hover:scale-105"
-                      >Let's Create Together</a
-                    >
-                  </div>
-                  <hr
-                    class="absolute left-[33%] max-h-[160px] hidden lg:block bg-zinc-500 !h-full w-[1px]"
-                  />
-                  <div class="flex items-start justify-center lg:w-1/3">
-                    <h1 class="text-xl lg:text-4xl font-medium">
-                      User-friendly app interfaces that keep your audience
-                      engaged and coming back.
-                    </h1>
-                  </div>
-                  <div class="flex items-start justify-center lg:w-1/3">
-                    <p class="text-md">
-                      Have a project in mind? Whether you’re looking to build a
-                      stunning website, design a user-friendly app, or elevate
-                      your digital marketing strategy, the BRIDHAUS team is
-                      ready to help. Let’s create something extraordinary
-                      together.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="w-full py-4">
-                  <div class="servicesSlider">
-                    <div class="slicky mx-3">
-                      <div class="flexy w-full h-full relative">
-                        <img
-                          src="assets/images/define.png"
-                          class="img-fluid h-full w-full object-contain bg-black/[0.25]"
-                          alt=""
-                        />
-                        <div
-                          class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
-                        >
-                          <img
-                            src="assets/images/rightUpArrow.svg"
-                            class="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="absolute bottom-3 left-3 w-4/5 text-gray-200"
-                        >
-                          <h2 class="text-xl lg:text-5xl font-semibold">
-                            Designs That Define Brands
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="slicky mx-3">
-                      <div class="flexy w-full h-full relative">
-                        <img
-                          src="assets/images/define.png"
-                          class="img-fluid h-full w-full object-contain bg-black/[0.25]"
-                          alt=""
-                        />
-                        <div
-                          class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
-                        >
-                          <img
-                            src="assets/images/rightUpArrow.svg"
-                            class="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="absolute bottom-3 left-3 w-4/5 text-gray-200"
-                        >
-                          <h2 class="text-xl lg:text-5xl font-semibold">
-                            Designs That Define Brands
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="slicky mx-3">
-                      <div class="flexy w-full h-full relative">
-                        <img
-                          src="assets/images/define.png"
-                          class="img-fluid h-full w-full object-contain bg-black/[0.25]"
-                          alt=""
-                        />
-                        <div
-                          class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
-                        >
-                          <img
-                            src="assets/images/rightUpArrow.svg"
-                            class="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="absolute bottom-3 left-3 w-4/5 text-gray-200"
-                        >
-                          <h2 class="text-xl lg:text-5xl font-semibold">
-                            Designs That Define Brands
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="slicky mx-3">
-                      <div class="flexy w-full h-full relative">
-                        <img
-                          src="assets/images/define.png"
-                          class="img-fluid h-full w-full object-contain bg-black/[0.25]"
-                          alt=""
-                        />
-                        <div
-                          class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
-                        >
-                          <img
-                            src="assets/images/rightUpArrow.svg"
-                            class="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="absolute bottom-3 left-3 w-4/5 text-gray-200"
-                        >
-                          <h2 class="text-xl lg:text-5xl font-semibold">
-                            Designs That Define Brands
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                id="service-4"
-                class="relative flex flex-col items-start !justify-center w-full"
-              >
-                <div
-                  class="flex flex-col lg:flex-row items-start lg:items-center justify-center lg:justify-between space-y-3 !p-4 !p-6 lg:gap-x-10 bg-white hover:!bg-black text-black hover:!text-white duration-300 border border-gray-700 hover:border-gray-200"
-                >
-                  <div
-                    class="flex flex-col items-start !justify-center space-y-3 lg:w-1/3"
-                  >
-                    <h2 class="text-xl lg:text-2xl uppercase font-medium">
-                      UI/UX Design
-                    </h2>
-                    <ul class="flex !list-none flex-col items-start space-y-1">
-                      <li class="">
-                        <span class="text-md">Wireframing & Prototyping</span>
-                      </li>
-                      <li class="">
-                        <span class="text-md">Interactive Design</span>
-                      </li>
-                      <li class="">
-                        <span class="text-md">User-Centered Design</span>
-                      </li>
-                    </ul>
-                    <a
-                      href="contact-us.html"
-                      class="rounded-full border-2 border-white max-sm:px-4 !py-2 lg:px-8 font-semibold uppercase bg-black hover:!bg-white hover:!text-black text-white transition-all transform ease-in-out duration-300 hover:scale-105"
-                      >Let's Create Together</a
-                    >
-                  </div>
-                  <hr
-                    class="absolute left-[33%] max-h-[160px] hidden lg:block bg-zinc-500 !h-full w-[1px]"
-                  />
-                  <div class="flex items-start justify-center lg:w-1/3">
-                    <h1 class="text-xl lg:text-4xl font-medium">
-                      Seamless designs that prioritize user satisfaction and
-                      enhance digital experiences.
-                    </h1>
-                  </div>
-                  <div class="flex items-start justify-center lg:w-1/3">
-                    <p class="text-md">
-                      Have a project in mind? Whether you’re looking to build a
-                      stunning website, design a user-friendly app, or elevate
-                      your digital marketing strategy, the BRIDHAUS team is
-                      ready to help. Let’s create something extraordinary
-                      together.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="w-full py-4">
-                  <div class="servicesSlider">
-                    <div class="slicky mx-3">
-                      <div class="flexy w-full h-full relative">
-                        <img
-                          src="assets/images/define.png"
-                          class="img-fluid h-full w-full object-contain bg-black/[0.25]"
-                          alt=""
-                        />
-                        <div
-                          class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
-                        >
-                          <img
-                            src="assets/images/rightUpArrow.svg"
-                            class="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="absolute bottom-3 left-3 w-4/5 text-gray-200"
-                        >
-                          <h2 class="text-xl lg:text-5xl font-semibold">
-                            Designs That Define Brands
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="slicky mx-3">
-                      <div class="flexy w-full h-full relative">
-                        <img
-                          src="assets/images/define.png"
-                          class="img-fluid h-full w-full object-contain bg-black/[0.25]"
-                          alt=""
-                        />
-                        <div
-                          class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
-                        >
-                          <img
-                            src="assets/images/rightUpArrow.svg"
-                            class="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="absolute bottom-3 left-3 w-4/5 text-gray-200"
-                        >
-                          <h2 class="text-xl lg:text-5xl font-semibold">
-                            Designs That Define Brands
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="slicky mx-3">
-                      <div class="flexy w-full h-full relative">
-                        <img
-                          src="assets/images/define.png"
-                          class="img-fluid h-full w-full object-contain bg-black/[0.25]"
-                          alt=""
-                        />
-                        <div
-                          class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
-                        >
-                          <img
-                            src="assets/images/rightUpArrow.svg"
-                            class="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="absolute bottom-3 left-3 w-4/5 text-gray-200"
-                        >
-                          <h2 class="text-xl lg:text-5xl font-semibold">
-                            Designs That Define Brands
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="slicky mx-3">
-                      <div class="flexy w-full h-full relative">
-                        <img
-                          src="assets/images/define.png"
-                          class="img-fluid h-full w-full object-contain bg-black/[0.25]"
-                          alt=""
-                        />
-                        <div
-                          class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
-                        >
-                          <img
-                            src="assets/images/rightUpArrow.svg"
-                            class="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="absolute bottom-3 left-3 w-4/5 text-gray-200"
-                        >
-                          <h2 class="text-xl lg:text-5xl font-semibold">
-                            Designs That Define Brands
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                id="service-5"
-                class="relative flex flex-col items-start !justify-center w-full"
-              >
-                <div
-                  class="flex flex-col lg:flex-row items-start lg:items-center justify-center lg:justify-between space-y-3 !p-4 !p-6 lg:gap-x-10 bg-white hover:!bg-black text-black hover:!text-white duration-300 border border-gray-700 hover:border-gray-200"
-                >
-                  <div
-                    class="flex flex-col items-start !justify-center space-y-3 lg:w-1/3"
-                  >
-                    <h2 class="text-xl lg:text-2xl uppercase font-medium">
-                      SEO
-                    </h2>
-                    <ul class="flex !list-none flex-col items-start space-y-1">
-                      <li class="">
-                        <span class="text-md">Keyword Optimization</span>
-                      </li>
-                      <li class="">
-                        <span class="text-md">On-Page SEO</span>
-                      </li>
-                      <li class="">
-                        <span class="text-md">Technical SEO</span>
-                      </li>
-                    </ul>
-                    <a
-                      href="contact-us.html"
-                      class="rounded-full border-2 border-white max-sm:px-4 !py-2 lg:px-8 font-semibold uppercase bg-black hover:!bg-white hover:!text-black text-white transition-all transform ease-in-out duration-300 hover:scale-105"
-                      >Let's Create Together</a
-                    >
-                  </div>
-                  <hr
-                    class="absolute left-[33%] max-h-[160px] hidden lg:block bg-zinc-500 !h-full w-[1px]"
-                  />
-                  <div class="flex items-start justify-center lg:w-1/3">
-                    <h1 class="text-xl lg:text-4xl font-medium">
-                      Boost your online visibility with strategies that improve
-                      search rankings and drive traffic.
-                    </h1>
-                  </div>
-                  <div class="flex items-start justify-center lg:w-1/3">
-                    <p class="text-md">
-                      Have a project in mind? Whether you’re looking to build a
-                      stunning website, design a user-friendly app, or elevate
-                      your digital marketing strategy, the BRIDHAUS team is
-                      ready to help. Let’s create something extraordinary
-                      together.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="w-full py-4">
-                  <div class="servicesSlider">
-                    <div class="slicky mx-3">
-                      <div class="flexy w-full h-full relative">
-                        <img
-                          src="assets/images/define.png"
-                          class="img-fluid h-full w-full object-contain bg-black/[0.25]"
-                          alt=""
-                        />
-                        <div
-                          class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
-                        >
-                          <img
-                            src="assets/images/rightUpArrow.svg"
-                            class="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="absolute bottom-3 left-3 w-4/5 text-gray-200"
-                        >
-                          <h2 class="text-xl lg:text-5xl font-semibold">
-                            Designs That Define Brands
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="slicky mx-3">
-                      <div class="flexy w-full h-full relative">
-                        <img
-                          src="assets/images/define.png"
-                          class="img-fluid h-full w-full object-contain bg-black/[0.25]"
-                          alt=""
-                        />
-                        <div
-                          class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
-                        >
-                          <img
-                            src="assets/images/rightUpArrow.svg"
-                            class="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="absolute bottom-3 left-3 w-4/5 text-gray-200"
-                        >
-                          <h2 class="text-xl lg:text-5xl font-semibold">
-                            Designs That Define Brands
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="slicky mx-3">
-                      <div class="flexy w-full h-full relative">
-                        <img
-                          src="assets/images/define.png"
-                          class="img-fluid h-full w-full object-contain bg-black/[0.25]"
-                          alt=""
-                        />
-                        <div
-                          class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
-                        >
-                          <img
-                            src="assets/images/rightUpArrow.svg"
-                            class="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="absolute bottom-3 left-3 w-4/5 text-gray-200"
-                        >
-                          <h2 class="text-xl lg:text-5xl font-semibold">
-                            Designs That Define Brands
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="slicky mx-3">
-                      <div class="flexy w-full h-full relative">
-                        <img
-                          src="assets/images/define.png"
-                          class="img-fluid h-full w-full object-contain bg-black/[0.25]"
-                          alt=""
-                        />
-                        <div
-                          class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
-                        >
-                          <img
-                            src="assets/images/rightUpArrow.svg"
-                            class="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="absolute bottom-3 left-3 w-4/5 text-gray-200"
-                        >
-                          <h2 class="text-xl lg:text-5xl font-semibold">
-                            Designs That Define Brands
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                id="service-6"
-                class="relative flex flex-col items-start !justify-center w-full"
-              >
-                <div
-                  class="flex flex-col lg:flex-row items-start lg:items-center justify-center lg:justify-between space-y-3 !p-4 !p-6 lg:gap-x-10 bg-white hover:!bg-black text-black hover:!text-white duration-300 border border-gray-700 hover:border-gray-200"
-                >
-                  <div
-                    class="flex flex-col items-start !justify-center space-y-3 lg:w-1/3"
-                  >
-                    <h2 class="text-xl lg:text-2xl uppercase font-medium">
-                      Digital Marketing
-                    </h2>
-                    <ul class="flex !list-none flex-col items-start space-y-1">
-                      <li class="">
-                        <span class="text-md">Social Media Campaigns</span>
-                      </li>
-                      <li class="">
-                        <span class="text-md">Email Marketing</span>
-                      </li>
-                      <li class="">
-                        <span class="text-md">Content Marketing</span>
-                      </li>
-                    </ul>
-                    <a
-                      href="contact-us.html"
-                      class="rounded-full border-2 border-white max-sm:px-4 !py-2 lg:px-8 font-semibold uppercase bg-black hover:!bg-white hover:!text-black text-white transition-all transform ease-in-out duration-300 hover:scale-105"
-                      >Let's Create Together</a
-                    >
-                  </div>
-                  <hr
-                    class="absolute left-[33%] max-h-[160px] hidden lg:block bg-zinc-500 !h-full w-[1px]"
-                  />
-                  <div class="flex items-start justify-center lg:w-1/3">
-                    <h1 class="text-xl lg:text-4xl font-medium">
-                      Data-driven campaigns designed to grow your audience and
-                      achieve measurable results.
-                    </h1>
-                  </div>
-                  <div class="flex items-start justify-center lg:w-1/3">
-                    <p class="text-md">
-                      Have a project in mind? Whether you’re looking to build a
-                      stunning website, design a user-friendly app, or elevate
-                      your digital marketing strategy, the BRIDHAUS team is
-                      ready to help. Let’s create something extraordinary
-                      together.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="w-full py-4">
-                  <div class="servicesSlider">
-                    <div class="slicky mx-3">
-                      <div class="flexy w-full h-full relative">
-                        <img
-                          src="assets/images/define.png"
-                          class="img-fluid h-full w-full object-contain bg-black/[0.25]"
-                          alt=""
-                        />
-                        <div
-                          class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
-                        >
-                          <img
-                            src="assets/images/rightUpArrow.svg"
-                            class="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="absolute bottom-3 left-3 w-4/5 text-gray-200"
-                        >
-                          <h2 class="text-xl lg:text-5xl font-semibold">
-                            Designs That Define Brands
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="slicky mx-3">
-                      <div class="flexy w-full h-full relative">
-                        <img
-                          src="assets/images/define.png"
-                          class="img-fluid h-full w-full object-contain bg-black/[0.25]"
-                          alt=""
-                        />
-                        <div
-                          class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
-                        >
-                          <img
-                            src="assets/images/rightUpArrow.svg"
-                            class="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="absolute bottom-3 left-3 w-4/5 text-gray-200"
-                        >
-                          <h2 class="text-xl lg:text-5xl font-semibold">
-                            Designs That Define Brands
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="slicky mx-3">
-                      <div class="flexy w-full h-full relative">
-                        <img
-                          src="assets/images/define.png"
-                          class="img-fluid h-full w-full object-contain bg-black/[0.25]"
-                          alt=""
-                        />
-                        <div
-                          class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
-                        >
-                          <img
-                            src="assets/images/rightUpArrow.svg"
-                            class="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="absolute bottom-3 left-3 w-4/5 text-gray-200"
-                        >
-                          <h2 class="text-xl lg:text-5xl font-semibold">
-                            Designs That Define Brands
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="slicky mx-3">
-                      <div class="flexy w-full h-full relative">
-                        <img
-                          src="assets/images/define.png"
-                          class="img-fluid h-full w-full object-contain bg-black/[0.25]"
-                          alt=""
-                        />
-                        <div
-                          class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
-                        >
-                          <img
-                            src="assets/images/rightUpArrow.svg"
-                            class="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="absolute bottom-3 left-3 w-4/5 text-gray-200"
-                        >
-                          <h2 class="text-xl lg:text-5xl font-semibold">
-                            Designs That Define Brands
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                id="service-7"
-                class="relative flex flex-col items-start !justify-center w-full"
-              >
-                <div
-                  class="flex flex-col lg:flex-row items-start lg:items-center justify-center lg:justify-between space-y-3 !p-4 !p-6 lg:gap-x-10 bg-white hover:!bg-black text-black hover:!text-white duration-300 border border-gray-700 hover:border-gray-200"
-                >
-                  <div
-                    class="flex flex-col items-start !justify-center space-y-3 lg:w-1/3"
-                  >
-                    <h2 class="text-xl lg:text-2xl uppercase font-medium">
-                      Advertising Design
-                    </h2>
-                    <ul class="flex !list-none flex-col items-start space-y-1">
-                      <li class="">
-                        <span class="text-md">Creative Campaigns</span>
-                      </li>
-                      <li class="">
-                        <span class="text-md">Print & Digital Ads</span>
-                      </li>
-                      <li class="">
-                        <span class="text-md">Brand Storytelling</span>
-                      </li>
-                    </ul>
-                    <a
-                      href="contact-us.html"
-                      class="rounded-full border-2 border-white max-sm:px-4 !py-2 lg:px-8 font-semibold uppercase bg-black hover:!bg-white hover:!text-black text-white transition-all transform ease-in-out duration-300 hover:scale-105"
-                      >Let's Create Together</a
-                    >
-                  </div>
-                  <hr
-                    class="absolute left-[33%] max-h-[160px] hidden lg:block bg-zinc-500 !h-full w-[1px]"
-                  />
-                  <div class="flex items-start justify-center lg:w-1/3">
-                    <h1 class="text-xl lg:text-4xl font-medium">
-                      Eye-catching ad designs that amplify your message and
-                      drive conversions.
-                    </h1>
-                  </div>
-                  <div class="flex items-start justify-center lg:w-1/3">
-                    <p class="text-md">
-                      Have a project in mind? Whether you’re looking to build a
-                      stunning website, design a user-friendly app, or elevate
-                      your digital marketing strategy, the BRIDHAUS team is
-                      ready to help. Let’s create something extraordinary
-                      together.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="w-full py-4">
-                  <div class="servicesSlider">
-                    <div class="slicky mx-3">
-                      <div class="flexy w-full h-full relative">
-                        <img
-                          src="assets/images/define.png"
-                          class="img-fluid h-full w-full object-contain bg-black/[0.25]"
-                          alt=""
-                        />
-                        <div
-                          class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
-                        >
-                          <img
-                            src="assets/images/rightUpArrow.svg"
-                            class="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="absolute bottom-3 left-3 w-4/5 text-gray-200"
-                        >
-                          <h2 class="text-xl lg:text-5xl font-semibold">
-                            Designs That Define Brands
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="slicky mx-3">
-                      <div class="flexy w-full h-full relative">
-                        <img
-                          src="assets/images/define.png"
-                          class="img-fluid h-full w-full object-contain bg-black/[0.25]"
-                          alt=""
-                        />
-                        <div
-                          class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
-                        >
-                          <img
-                            src="assets/images/rightUpArrow.svg"
-                            class="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="absolute bottom-3 left-3 w-4/5 text-gray-200"
-                        >
-                          <h2 class="text-xl lg:text-5xl font-semibold">
-                            Designs That Define Brands
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="slicky mx-3">
-                      <div class="flexy w-full h-full relative">
-                        <img
-                          src="assets/images/define.png"
-                          class="img-fluid h-full w-full object-contain bg-black/[0.25]"
-                          alt=""
-                        />
-                        <div
-                          class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
-                        >
-                          <img
-                            src="assets/images/rightUpArrow.svg"
-                            class="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="absolute bottom-3 left-3 w-4/5 text-gray-200"
-                        >
-                          <h2 class="text-xl lg:text-5xl font-semibold">
-                            Designs That Define Brands
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="slicky mx-3">
-                      <div class="flexy w-full h-full relative">
-                        <img
-                          src="assets/images/define.png"
-                          class="img-fluid h-full w-full object-contain bg-black/[0.25]"
-                          alt=""
-                        />
-                        <div
-                          class="absolute p-3 flexy bg-gradient-to-r from-[#DCBDF9] to-[#FAE6E6] rounded-full top-3 right-3 size-[3.5rem]"
-                        >
-                          <img
-                            src="assets/images/rightUpArrow.svg"
-                            class="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="absolute bottom-3 left-3 w-4/5 text-gray-200"
-                        >
-                          <h2 class="text-xl lg:text-5xl font-semibold">
-                            Designs That Define Brands
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <footer class="relative w-full h-full bg-black">
-        <div class="container">
-          <div class="row w-full flexy px-3 lg:!px-12 py-4">
             <div
-              class="w-full flex flex-col lg:flex-row items-start lg:items-center justify-center lg:justify-between max-md:space-y-5"
+              class="flex flex-col lg:flex-row max-md:pt-20 max-md:pb-4 relative text-white items-center justify-start lg:justify-between max-lg:gap-y-4 px-3 lg:!px-12 lg:-bottom-[5.5rem]"
             >
-              <div class="flex !gap-x-3">
-                <a href="javascript:void(0)" class="w-12">
-                  <img src="assets/images/ig.png" class="img-fluid" alt="" />
-                </a>
-              </div>
-
-              <div class="flexy lg:pl-28">
+              <div class="flex relative lg:left-[43%]">
                 <a
                   href="contact-us.html"
                   class="rounded-full border-2 border-white max-sm:px-4 !py-2 lg:px-8 font-semibold uppercase bg-transparent hover:!bg-[#ffffff] hover:text-black text-[#fff] transition-all transform ease-in-out duration-300 hover:scale-105"
                   >request a quote</a
                 >
               </div>
-
-              <div class="flexy text-white">
-                <span class="text-lg">© 2024 Birdhaus</span>
+              <div class="flex">
+                <span>© 2024 Birdhaus</span>
               </div>
             </div>
           </div>
         </div>
-      </footer>
+      </section>
     </main>
 
     <script src="assets/js/jquery-3.7.1.js"></script>
@@ -1397,36 +1435,34 @@
     <script src="assets/js/main.js"></script>
 
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const links = document.querySelectorAll('a[href^="#service-"]');
-        const services = document.querySelectorAll('[id^="service-"]');
-
-        // Initially hide all services
-        services.forEach((service) => {
-          service.style.display = 'none';
+      // Modal Window
+      (() => {
+        const modalBtns = Array.from(document.querySelectorAll('.otherPages'));
+        modalBtns.forEach((btn) => {
+          btn.onclick = function () {
+            const modal = btn.getAttribute('data-modal');
+            document.getElementById(modal).style.display = 'block';
+            document.querySelector('body').style.overflow = 'hidden';
+          };
         });
 
-        links.forEach((link) => {
-          link.addEventListener('click', (event) => {
-            event.preventDefault();
-
-            // Get the target service ID
-            const targetId = link.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-
-            // Hide all services
-            services.forEach((service) => {
-              service.style.display = 'none';
-            });
-
-            // Show the target service
-            if (targetElement) {
-              targetElement.style.display = 'block';
-              targetElement.scrollIntoView({ behavior: 'smooth' });
-            }
-          });
+        const closeBtns = Array.from(
+          document.querySelectorAll('.close-button')
+        );
+        closeBtns.forEach((btn) => {
+          btn.onclick = function () {
+            let modal = btn.closest('.modal');
+            modal.style.display = 'none';
+            document.querySelector('body').style.overflow = 'visible';
+          };
         });
-      });
+
+        window.onclick = function (event) {
+          if (event.target.className === 'modal') {
+            event.target.style.display = 'none';
+          }
+        };
+      })();
     </script>
   </body>
 </html>
